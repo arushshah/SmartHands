@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Weather</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="/static/styles.css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    </head>
+    <body class="weather">
+        <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">SmartHands</a></li>
+              <li><a href="/">Home</a></li>
+              <li class="active"><a href="/weather">Weather</a></li>
+              <li><a href="/sms">Emergency SMS</a></li>
+              <li><a href="/email">Emergency Email</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+        
+        <div class="container">
+            <h1 class="page-title">
+                <i class="fa fa-cloud fa-1x"></i>
+                Weather for Hackensack, NJ
+            </h1>
+            <br><br>
+            <div class="row">
+                <div class="col-md-4">
+                    <h1 class="temp">{{ temp }}°F<br></h1>
+                    <h1 class="status"><i>{{ status }} </h1>
+                    <h1 class="real-feel">Feels Like {{ actual_temp }}°F</h1>
+                </div>
+                <h1 class="col-md-4"><br>Wind<br> {{ wind_speed }} mph {{ wind_direction }}</h1>
+                <h1 class="col-md-4"><br>Humidity<br> {{ humidity }}%</i></h1>
+            </div>
+            
+            <div>
+                <br><br>
+                <div class="col-md-5 forecast">
+                    <h1 style="font-weight: bold">Tonight's Forecast</h1>
+                    <h1 class="temp">{{ night_temp }}°F<br></h1>
+                    <h1 class="status"><i>{{ night_status }} </h1>
+                    <h1>Wind<br> {{ night_wind_speed }} mph {{ night_wind_dir }}</i></h1>
+                </div>
+                
+                <div class="col-md-2"></div>
+                
+                <div class="col-md-5 forecast">
+                    <h1 style="font-weight: bold">Tomorrow's Forecast</h1>
+                    <h1 class="temp">{{ tom_temp }}°F<br></h1>
+                    <h1 class="status"><i>{{ tom_status }} </h1>
+                    <h1>Wind<br> {{ tom_wind_speed }} mph {{ tom_wind_dir }}</i></h1>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
