@@ -72,7 +72,7 @@ def c_to_f(original):
 	return int((1.8 * original) + 32)
 
 def send_email(recipient, content):
-	sg = sendgrid.SendGridClient('shaantamc', 'Coolab9')
+	sg = sendgrid.SendGridClient('username', 'password')
 	message = sendgrid.Mail()
 	message.add_to('<' + recipient)
 	message.set_subject('Emergency: Patient is in trouble')
